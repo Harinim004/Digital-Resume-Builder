@@ -1,0 +1,147 @@
+/* General Styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #232526, #414345);
+  color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h2, h3, h4 {
+  color: #00f2ff;
+}
+
+textarea, input[type="text"], input[type="email"], input[type="file"], input[type="url"], input[type="tel"] {
+  background-color: #1e1e1e;
+  border: 1px solid #555;
+  color: white;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #ccc;
+}
+
+textarea:focus, input:focus {
+  border-color: #00f2ff;
+  box-shadow: 0 0 8px #00f2ff;
+  outline: none;
+}
+
+/* Buttons */
+.glow-btn, .btn-primary, .btn-success, .btn-secondary {
+  box-shadow: 0 0 8px #00f2ff;
+  transition: transform 0.3s ease;
+}
+
+.glow-btn:hover, .btn:hover {
+  transform: scale(1.05);
+}
+
+/* Profile Pic */
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(255,255,255,0.3);
+}
+
+/* Resume Preview Box */
+.resume-preview {
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 10px;
+  padding: 20px;
+  min-height: 400px;
+}
+
+.resume-preview h2 {
+  margin-bottom: 5px;
+}
+
+.resume-preview ul {
+  padding-left: 20px;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+body.dark-mode .resume-preview {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #2a2a2a;
+  color: white;
+  border-color: #555;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 999;
+}
+
+/* Progressbar Wizard */
+.progressbar {
+  counter-reset: step;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  list-style-type: none;
+  padding: 0;
+}
+
+.progressbar .step {
+  position: relative;
+  text-align: center;
+  flex: 1;
+}
+
+.progressbar .step::before {
+  content: counter(step);
+  counter-increment: step;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border: 2px solid #00e6e6;
+  display: block;
+  text-align: center;
+  margin: 0 auto 10px auto;
+  border-radius: 50%;
+  background-color: white;
+  color: #00e6e6;
+  font-weight: bold;
+}
+
+.progressbar .step.active::before {
+  background-color: #00e6e6;
+  color: white;
+}
+
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
